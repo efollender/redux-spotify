@@ -20,11 +20,9 @@ export default class SpotifyHandler {
     authSpotify(username, password, (spotify) => {
       this.spotify = spotify;
     });
-
-    this.currentTrack = null;
   }
   play() {
-    const currentTrack = this.currentTrack;
+    const currentTrack = this.state.current;
     this.spotify.get(currentTrack.uri, (err, song) => {
       if (err) {
         this.error = err;
@@ -43,11 +41,8 @@ export default class SpotifyHandler {
     this.socket.emit('action', actions.NEXT);
   }
   handleState(state) {
-    const oldSate = this.state;
-
     this.state = state;
-    this.state.paused ? this.handlePause;
-
-
+    // this.state.paused ? this.handlePause;
+    this.play();
   }
 }
