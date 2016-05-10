@@ -1,7 +1,8 @@
 import Spotify from 'spotify';
 import lame from 'lame';
-import EventEmitter from 'events';
+import io from 'socket.io-client';
 import Speaker from 'speaker';
+import * as actions from './actions';
 
 const username = process.argv[2];
 const password = process.argv[4];
@@ -11,18 +12,20 @@ function authSpotify(user, pass, (err, spotify) => {
   return spotify;
 });
 
-export default class SpotifyHandler extends EventEmitter {
+export default class SpotifyHandler {
   constructor() {
-    super(props);
+    this.socket = io(`${location.protocol}//${location.hostname}:8090`);
+    this.socket.on('state', state => this.handleState(state));
 
     authSpotify(username, password, (spotify) => {
       this.spotify = spotify;
     });
+
     this.currentTrack = null;
   }
   play() {
     const currentTrack = this.currentTrack;
-    this.spotify.get(track.uri, (err, song) => {
+    this.spotify.get(currentTrack.uri, (err, song) => {
       if (err) {
         this.error = err;
         throw err;
@@ -30,10 +33,21 @@ export default class SpotifyHandler extends EventEmitter {
       song.play()
         .pipe(new lame.Decoder())
         .pipe(new Speaker())
-        .on('finish', () => {
-          this.emit('track ended');
-        });
+        .on('finish', this.handleFinish);
     });
   }
-  
+  pause() {
+    this.spotify.track.pause();
+  }
+  handleFinish() {
+    this.socket.emit('action', actions.NEXT);
+  }
+  handleState(state) {
+    const oldSate = this.state;
+
+    this.state = state;
+    this.state.paused ? this.handlePause;
+
+
+  }
 }
