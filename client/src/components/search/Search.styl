@@ -1,0 +1,44 @@
+@import 'nib'
+
+:local(.search)
+	flex 0 0 0%
+	position relative
+	transition all .2s ease-in-out
+	min-height 100vh
+	background #333
+	color white
+	form
+		width 100%
+		position relative
+		padding 1em
+		background black
+	.results
+		> div
+			padding 1em 2em
+			box-shadow 0 2px 4px rgba(black, .4)
+			text-align left
+			font-size .8em
+			cursor pointer
+			&.disabled
+				opacity .3
+				cursor default
+	input
+		outline none
+		padding 0
+		border none
+		transition all .2s ease-in-out
+		color #00B37E
+		text-transform uppercase
+		font-size 1.2em
+		width 100%
+		background black
+	.inner-wrapper
+		max-width 0
+		overflow hidden
+	&.open
+		flex 1 0 25%
+		input
+			padding 1em
+		.inner-wrapper
+			max-width 1000%
+		

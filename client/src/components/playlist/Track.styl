@@ -1,0 +1,52 @@
+:local(.track)
+	background rgba(#333,.7)
+	color white
+	padding 2rem
+	text-align center
+	font-weight 100
+	position relative
+	transition all .2s ease-in-out
+	.track-title
+		font-size 1.3em
+		color #ccc
+		display inline-block
+		width 100%
+		padding-bottom .5em
+	.track-artist
+		color #00B37E
+		display inline-block
+		width 100%
+	.track-duration
+		color yellow
+		font-size .8em
+		position absolute
+		display inline-block
+		top 50%
+		transform translateY(-50%)
+		right 1em
+:local(.currentTrack)
+	background repeating-linear-gradient(90deg, #ccc, #ccc 150px, white, #ccc 151px)
+	padding 2em
+	position relative
+	text-align center
+	font-weight 100
+	&:before
+		position absolute
+		content ''
+		left 0
+		right 0
+		top 0
+		height 1em
+		background repeating-linear-gradient(90deg, transparent, transparent 147px, white, transparent 152px)
+	.track-title
+		font-size 1.3em
+		color black
+		display inline-block
+		width 100%
+		padding-bottom .5em
+	.track-artist
+		color #333
+		display inline-block
+		width 100%
+		text-transform uppercase
+	

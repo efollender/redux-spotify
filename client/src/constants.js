@@ -1,0 +1,9 @@
+export const ADD_TRACK = 'ADD_TRACK';
+export const NEXT = 'NEXT';
+export const PAUSE = 'PAUSE';
+export const PLAY = 'PLAY';
+export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
+export const SEARCH_ERROR = 'SEARCH_ERROR';
+export const SEARCH_REQUEST = 'SEARCH_REQUEST';
+export const SET_STATE = 'SET_STATE';
+export const TOGGLE_SEARCH = 'TOGGLE_SEARCH';

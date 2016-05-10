@@ -1,0 +1,46 @@
+:local(.playlist)
+	top -141px
+	padding-top 141px
+	margin-bottom -141px
+	position relative
+	.background-album
+		position fixed
+		top 0
+		left 0
+		right 0
+		bottom 0
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			right 0
+			bottom 0
+			background rgba(black, .8)
+	.fa
+		text-align center
+		width 100%
+		margin 1em 0 0em
+		font-size 5em
+		cursor pointer
+		z-index 1
+		position relative
+		&.fa-play
+			color transparent
+			-webkit-text-stroke .15em yellow
+		&.fa-pause
+			color yellow
+	.skip
+		font-size 4.5em
+		color lighten(#B14DA9, 10)
+		text-align center
+		width 100%
+		cursor pointer
+		z-index 1
+		position relative
+		h4
+			margin 1em 0
+	.tracks > div
+		margin .5em auto
+		margin-top 0
+		width 80%
