@@ -21,13 +21,13 @@ export default class SpotifyHandler {
     });
   }
   play() {
-    const {current} = this.state;
-    this.spotify.get('spotify:track:4RiY46Y5zwRiOODOyUMp4w', (err, song) => {
+    const current = this.state.current[0];
+    this.spotify.get(current.uri, (err, song) => {
       if (err) {
         this.error = err;
         throw err;
       }
-      song._spotify = this.spotify;
+      console.log('song', song);
       song.play()
         .pipe(new lame.Decoder())
         .pipe(new Speaker())
@@ -44,6 +44,5 @@ export default class SpotifyHandler {
     this.state = state;
     // this.state.paused ? this.handlePause;
     if (this.spotify && this.state.current) this.play();
-    console.log(this.state);
   }
 }

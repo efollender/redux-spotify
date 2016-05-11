@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js",
+    "start": "babel-node index.js adkhiker92 Ch1llB1tch!",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
     "test:watch": "npm run test -- --watch"
   },
@@ -34,7 +34,7 @@
     "redux": "^3.0.6",
     "socket.io": "^1.4.4",
     "socket.io-client": "^1.4.6",
-    "speaker": "^0.3.0",
-    "spotify-web": "git+https://github.com/Shigawire/node-spotify-web.git"
+    "speaker": "git+https://github.com/MathijsvVelde/node-speaker.git",
+    "spotify-web": "git+https://github.com/Quacky2200/node-spotify-web.git"
   }
 }
