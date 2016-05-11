@@ -11,7 +11,8 @@ function formatTrack(track) {
 		id: track.id,
 		image: track.album.images[0].url,
 		artist: track.artists[0].name,
-		duration: track.duration_ms
+		duration: track.duration_ms,
+		uri: track.uri
 	});
 }
 

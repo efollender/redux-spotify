@@ -29,10 +29,12 @@
   "dependencies": {
     "axios": "^0.9.1",
     "immutable": "^3.7.6",
+    "lame": "^1.2.3",
     "nan": "^2.2.0",
     "redux": "^3.0.6",
     "socket.io": "^1.4.4",
     "socket.io-client": "^1.4.6",
-    "spotify-web": "^1.3.0"
+    "speaker": "^0.3.0",
+    "spotify-web": "git+https://github.com/Shigawire/node-spotify-web.git"
   }
 }
