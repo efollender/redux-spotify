@@ -10,6 +10,7 @@ import {
 } from './core';
 
 export default function reducer(state=INITIAL_STATE, action) {
+	console.log(action);
 	switch(action.type) {
 		case actions.ADD_TRACK:
 			return addTrack(state, action.track);

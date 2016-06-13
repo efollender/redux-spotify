@@ -31,10 +31,10 @@
     "immutable": "^3.7.6",
     "lame": "^1.2.3",
     "nan": "^2.2.0",
+    "node-spotify": "^0.7.2",
     "redux": "^3.0.6",
     "socket.io": "^1.4.4",
     "socket.io-client": "^1.4.6",
-    "speaker": "git+https://github.com/MathijsvVelde/node-speaker.git",
-    "spotify-web": "git+https://github.com/Quacky2200/node-spotify-web.git"
+    "web-audio-api": "^0.2.2"
   }
 }

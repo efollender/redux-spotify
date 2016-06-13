@@ -1,7 +1,9 @@
 import {List, Map, fromJS} from 'immutable';
 import axios from 'axios';
 
-export const INITIAL_STATE = Map();
+export const INITIAL_STATE = Map({
+	paused: false
+});
 
 function formatTrack(track) {
 	return Map({
