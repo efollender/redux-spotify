@@ -40,7 +40,7 @@ class Search extends Component {
 		return false;
 	}
 	addTrack(track) {
-		console.log(';checl', this.inPlaylist(track));
+		console.log('in playlist?', this.inPlaylist(track));
 		if(!this.inPlaylist(track)) this.props.addTrack(track);
 	}
 	handleSubmit(e) {

@@ -26,7 +26,7 @@ export class Playlist extends Component {
 		return this.props.playlist ? this.props.playlist.toJS() : [];
 	}
 	handlePause() {
-		console.log(this.props.paused);
+		console.log('paused?', this.props.paused);
 		return this.props.paused ? this.props.play : this.props.pause;
 	}
 	getMaxDuration() {

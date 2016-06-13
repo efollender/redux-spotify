@@ -5,7 +5,6 @@ import classNames from 'classnames';
 
 export default class Track extends Component {
 	shouldComponentUpdate = shouldPureComponentUpdate;
-
 	static propTypes = {
 		data: PropTypes.object,
 		width: PropTypes.object,
@@ -18,7 +17,7 @@ export default class Track extends Component {
 	}
 	render() {
 		const {title, artist, duration} = this.props.data;
-		const width = this.props.width || {width:''};
+		const width = this.props.width || {width:'auto'};
 		return (
 			<div className={classNames([StyleSheet.track], {
 							disabled: this.props.inPlaylist
