@@ -1,5 +1,4 @@
 import {List, Map, fromJS} from 'immutable';
-import axios from 'axios';
 
 export const INITIAL_STATE = Map({
 	paused: false

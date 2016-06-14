@@ -1,8 +1,6 @@
 import NodeSpotify from 'node-spotify';
 import io from 'socket.io-client';
-import webAudio from 'web-audio-api';
 import * as actions from './actions';
-const {AudioContext, AudioBufferSourceNode} = webAudio;
 const options = {
     appkeyFile: "./src/_appkey.key" //required
 };
